@@ -1,0 +1,178 @@
+
+
+
+
+.main{
+    height: 736px;
+    width: 100%;
+    background-image:url('/src/background_quiz.jpg');
+    backdrop-filter: blur(100px);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+/* Тест на skills верстальщика */
+.quiz {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    border-radius:30px;
+   font-family: 'Spectral', serif;
+    
+}
+
+
+.progress {
+    height: 10px;
+    border-radius: 30px;
+    background-color: rgb(232, 232, 232);
+   font-family: 'Spectral', serif;
+   margin-top: 20px;
+   background: rgb(271, 23, 106);
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, rgb(44, 45, 72), rgb(114, 145, 225));
+}
+
+.quiz__progress-inner {
+    height: 100%;
+    border-radius: 30px;
+    width: 70%;
+    
+   font-family: 'Spectral', serif;
+}
+
+
+.content{
+    padding: 30px 30px 20px;
+    flex: 1 0 auto;
+   font-family: 'Spectral', serif;
+}
+
+.title{
+    font-size: 25px;
+    font-weight: 600;
+   font-family: 'Spectral', serif;
+   margin-bottom: 10px;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 20px 0px;
+   font-family: 'Spectral', serif;
+}
+
+/* .quiz__option {
+    background: rgba(204, 113, 229, 0.285);
+  
+    border-radius: 30px;
+    padding: 8px 15px;
+    min-height: 44px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    border: 1px solid #560272;
+   font-family: 'Spectral', serif;
+} */
+
+/* .quiz__option:hover{
+    color: #000000;
+    background: rgb(204, 113, 229);
+   font-family: 'Spectral', serif;
+   
+    
+} */
+
+
+
+
+
+.footer{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+   font-family: 'Spectral', serif;
+   
+   
+}
+
+
+
+.but{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 20px;
+    background: #4b7db0;
+    transition: 0.3s;
+   font-family: 'Spectral', serif;
+   margin-left: 290px;
+   border:solid #4b7db0 2px;
+   
+    
+}
+.but:hover{
+    color: #ffffff;
+  background-color: #68aee1;
+ font-family: 'Spectral', serif;
+  
+  
+
+}
+/* Выводим результаты теста */
+.result{
+    max-width: 450px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+   font-family: 'Spectral', serif;
+}
+.options{
+   
+        background:#4b7db0;
+        /*border: 1px solid #84c5fe;*/
+        border-radius: 20px;
+        padding: 0px 15px;
+        min-height: 44px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        justify-content: space-between;
+        border: 2px solid #4b7db0;
+       font-family: 'Spectral', serif;
+       color: white;
+   
+    
+   
+}
+.options:hover{
+    
+    background: #68aee1;
+   font-family: 'Spectral', serif;
+   
+    
+}
+.active{
+    background:  #68aee1;
+    
+   font-family: 'Spectral', serif;
+}
+
+
+

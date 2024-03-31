@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.button{
+    
+    
+    background-color: rgb(255, 255, 255);
+    border-radius:20px;
+    width: 100px;
+    height: 30px;
+    font-size: 1em;
+    margin: 10px;
+    color:black;
+    
+    
+  }
+  .button:hover{
+    
+    
+    background-color: rgb(0, 0, 0);
+    color:white;
+    
+  }
+  .button_div{
+    display: flex;
+  padding: 0 2rem;
+  justify-content: center;
+  align-items: center;
+  }
+  .button_active{
+    color: white;
+    
+    background-color: black;
+    border-radius:20px;
+    width: 100px;
+    height: 30px;
+    font-size: 1em;
+    margin: 10px;
+    color:rgb(255, 255, 255);
+    
+    
+  }
+  button:disabled{
+    cursor: not-allowed;
+  }

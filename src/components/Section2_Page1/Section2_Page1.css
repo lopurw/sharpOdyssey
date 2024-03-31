@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+
+.str1_2{
+    
+    height: 690px;
+    
+    padding: 30px 118px 0 118px ;
+    background-image:url(/src/background.png);
+}
+.str1_2 h1{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    color: white;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 60px;
+}
+.section1{
+    width: 1300px;
+    height: 576px;
+    
+    padding: 0;
+    letter-spacing: 2px; /* добавлено */
+    line-height: 35px; /* добавлено */
+}
+.main1{
+    height: 288px;
+    width: 1300px;
+    
+    margin: 0;
+    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.main2{
+    height: 288px;
+    width: 1300px;
+    
+    margin: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.item1.first{
+    background-image:url(/src/card1.png);
+    background-size: no-repeat;
+    background-size: cover;
+    width: 475px;
+    
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    
+    
+  
+}
+.card1{
+    color:white;
+    margin: 20px 20px 50px 20px;
+}
+.card1 h2{
+    font-family: "Rubik Mono One", monospace;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    
+  
+}
+.card1 p{
+    font-family: "Forum", serif;
+    font-size: 30px;
+    margin-top: 15px;
+    padding: 0;
+    
+  
+}
+
+.item1.second{
+    background-image:url(/src/card2.png);
+    background-size: no-repeat;
+  
+    background-size: cover;
+    width: 440px;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.card2{
+    color:white;
+    margin: 50px 20px 50px 20px;
+    
+}
+.card2 h2{
+    font-family: "Rubik Mono One", monospace;
+    font-size:30px;
+    margin: 0;
+    padding: 0;
+    
+}
+.card2 p{
+    font-family: "Forum", serif;
+    font-size: 30px;
+    margin-top: 15px;
+    padding: 0;
+    
+    
+}
+.item2.third {
+    background-image:url(/src/card3.png);
+  
+    background-repeat: no-repeat; /* добавлено */
+    
+    width: 487px;
+    height: 214px;
+    text-align: center;
+    align-items: center;
+    
+}
+.card3{
+    margin: 40px 30px 50px 20px;
+    color:white;
+}
+
+.card3 h2{
+    font-family: "Rubik Mono One", monospace;
+    font-size:30px;
+}
+
+.card3 p{
+    font-family: "Forum", serif;
+    font-size: 30px;
+    
+    
+}
+
+
+

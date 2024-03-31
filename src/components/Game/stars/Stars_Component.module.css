@@ -1,0 +1,31 @@
+.stars {
+    position: relative; /* Добавляем относительное позиционирование */
+    font-size: 50px;
+    
+}
+
+.star1 {
+    font-size: 50px;
+    position: absolute;
+    left: 0; /* Определяем позицию относительно контейнера .stars */
+}
+
+.star2 {
+    font-size: 50px;
+    position: absolute;
+    left: 35px; /* Определяем позицию относительно контейнера .stars */
+    top: 15px;
+}
+
+.star3 {
+    font-size: 50px;
+    position: absolute;
+    left: 70px; /* Определяем позицию относительно контейнера .stars */
+}
+
+.star1.active,
+.star2.active,
+.star3.active {
+    font-size: 50px;
+    color: yellow;
+}

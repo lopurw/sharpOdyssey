@@ -1,0 +1,88 @@
+.str1{
+    width: 100%;
+    height: 666px;
+    
+    display: flex;
+    background-color:#2E334A;
+    justify-content: center;
+    /* align-items: center; */
+}
+.container{
+    width: 1300px;
+    height: 609px;
+    border-radius: 83px;
+    background-color: #7FACDD;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+}
+.logo_img{
+    
+    width: 200px;
+    height: 200px;
+    /* Добавляем отступ сверху */
+   
+    position: absolute;
+    top: 180px; /* Устанавливаем изображение в самый верх */
+    left: 50%; /* Размещаем изображение по центру по горизонтали */
+    transform: translateX(-50%); /* Центрируем изображение по горизонтали */
+    
+    
+
+}
+.container h1{
+    font-family: "Rubik Mono One", monospace;
+    font-size: 60px;
+    color:white;
+    margin-top: 90px;
+    z-index: 2;
+    
+}
+.container p{
+    font-family: "Forum", serif;
+    font-size: 40px;
+    z-index: 3;
+    position: absolute;
+    top: 480px;
+    color:white;
+}
+
+.but_start{
+    background-color:#2E334A;
+    color:white;
+    border-radius:89px;
+    width: 280px;
+    height: 74px;
+    font-family: "Forum", serif;
+    font-size: 50px;
+    position: absolute;
+    bottom: 100px;
+    left: 480px;
+    border: 1px solid #2E334A;
+}
+.but_dop{
+    background-color:rgba(245, 222, 179, 0);
+    border: #2e334a00;
+    font-family: "Forum", serif;
+    font-size: 50px;
+    position: absolute;
+    bottom: 105px;
+    right: 430px;
+}
+
+
+.on_str2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+
+}
+.on_str1 {
+    
+    position: absolute;
+    top: 10px;
+    left: 0;/* Устанавливаем z-index на более высокое значение */
+}

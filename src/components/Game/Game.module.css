@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;;
+}
+.str1{
+    height: 737px;
+    width: 100%;
+    position: relative;
+    background-image:url(/src/background_game.png);
+}
+.img1{
+    position: absolute;
+    top:10px;
+  
+}
+.home1{
+    width: 160px;
+}
+.img2{
+    position: absolute;
+    top:290px;
+}
+.home2{
+    width: 140px;
+}
+.img3{
+    position: absolute;
+    top:345px;
+    left: 210px;
+}
+.home3{
+    width: 180px;
+}
+.img4{
+    position: absolute;
+    top:310px;
+    left: 700px;
+}
+.home4{
+    width: 190px;
+}
+.img5{
+    position: absolute;
+    top:90px;
+    left: 1120px;
+  
+}
+.home5{
+    width: 150px;
+}
+.img6{
+    position: absolute;
+    top:390px;
+    left: 1240px;
+  
+}
+.home6{
+    width: 180px;
+}
+.stars {
+    position: relative;
+}
+
+.star_home1 {
+    position: absolute;
+    margin-left: 65px;
+    
+    margin-top: 155px; /* Подвинуть вниз */
+}
+.star_home2 {
+    position: absolute;
+    margin-left: 28px;
+    
+    margin-top: 465px; /* Подвинуть вниз */
+}
+.style1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; 
+    height: 400px;/* Добавлен px после числа для указания единиц измерения */
+    background-color: white; /* Заменено bgcolor на background-color */
+    
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+    backdrop-filter: blur(8px);
+    padding: 16px; /* Заменено p на padding */
+    /* border-radius: 30px; */
+    max-height: 80vh;
+    
+    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  overflow-x: hidden; 
+  border-radius:100px;
+  }
+  .style{
+    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+    overflow-x: hidden; 
+   
+  }
+  .style1::-webkit-scrollbar {
+    width: 5px; /* Уменьшите ширину скроллбара */
+  }.style1 ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Цвет ползунка */
+  }
+
+  
+.star_home3 {
+    position: absolute;
+    margin-left: 290px;
+    
+    margin-top: 510px; /* Подвинуть вниз */
+}
+.star_home4 {
+    position: absolute;
+    margin-left: 779px;
+    
+    margin-top: 450px; /* Подвинуть вниз */
+}
+.star_home5 {
+    position: absolute;
+    margin-left: 1170px;
+    
+    margin-top: 240px; /* Подвинуть вниз */
+}
+.star_home6 {
+    position: absolute;
+    margin-left: 1320px;
+    
+    margin-top: 530px; /* Подвинуть вниз */
+}
+.img_roles{
+    width: 70px;
+    margin-top: 10px;
+    margin-left: 1440px;
+}
+
+

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+*{
+    padding: 0;
+    margin: 0;;
+}
+.button{
+    background-color: #2E334A;
+    color:white;
+    height: 40px;
+    width: 170px;
+    outline: none;
+    border: 1px solid #2E334A;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 25px;
+    text-align: center;
+    
+    
+}
+.button:hover{
+    background-color: white;
+    color:#2E334A;
+    height: 40px;
+    width: 170px;
+    border-radius:90px;
+    outline: none;
+    border: 1px solid white;
+    font-family: "Rubik Mono One", monospace;
+    font-size:25px;
+    text-align: center;
+    
+    
+}
+.button_active{
+    background-color: white;
+    color:#2E334A;
+    height: 40px;
+    width: 170px;
+    border-radius:90px;
+    outline: none;
+    border: 1px solid white;
+    font-family: "Rubik Mono One", monospace;
+    font-size:25px;
+    text-align: center;
+    
+    
+}
