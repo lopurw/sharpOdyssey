@@ -1,7 +1,29 @@
 
 
+.modalonlevels{
+    background-color:#68aee1;
+    
 
-
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; 
+    height: 400px;/* Добавлен px после числа для указания единиц измерения */
+    background-color: white; /* Заменено bgcolor на background-color */
+    
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+    backdrop-filter: blur(8px);
+    padding: 16px; /* Заменено p на padding */
+    /* border-radius: 30px; */
+    max-height: 80vh;
+    
+    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  /* overflow-x: hidden;  */
+  border-radius:40px;
+}
 .main{
     height: 736px;
     width: 100%;
@@ -10,6 +32,7 @@
     display: flex;
     justify-content: center;
     align-items:center;
+    
 }
 
 /* Тест на skills верстальщика */
@@ -22,6 +45,7 @@
     background-color: white;
     border-radius:30px;
    font-family: 'Spectral', serif;
+   margin-right: 200px;
     
 }
 
@@ -123,6 +147,26 @@
    
     
 }
+.but1{
+    height: 80px;
+    width: 200px;
+    padding: 0 13px;
+    font-size: 36px;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 40px;
+    background: #4b7db0;
+    transition: 0.3s;
+   font-family: 'Spectral', serif;
+   /* margin-left: 290px; */
+   border:solid #4b7db0 2px;
+   position: relative;
+   bottom: 270px;
+   left: 870px;
+   margin: 0 auto;
+   
+    
+}
 .but:hover{
     color: #ffffff;
   background-color: #68aee1;
@@ -172,6 +216,137 @@
     background:  #68aee1;
     
    font-family: 'Spectral', serif;
+}
+.style1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; 
+    height: 800px;/* Добавлен px после числа для указания единиц измерения */
+    background-color: white; /* Заменено bgcolor на background-color */
+    
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+    backdrop-filter: blur(8px);
+    padding: 16px; /* Заменено p на padding */
+    /* border-radius: 30px; */
+    max-height: 80vh;
+    
+    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  /* overflow-x: hidden;  */
+  border-radius:40px;
+  }
+  .style{
+    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+    /* overflow-x: hidden;  */
+   
+  }
+  .text{
+    max-width: 720px;
+  }
+  .style1::-webkit-scrollbar {
+    width: 0px; 
+  }.style1 ::-webkit-scrollbar-thumb {
+    background-color: #888; /* Цвет ползунка */
+  }
+
+  .code{
+    font-size: 20px;
+    display: flex;
+    max-width: 720px;
+    overflow-wrap: break-word;
+    /* background-color: red; */
+  }
+  /* Стили для секций */
+.code section {
+    margin-bottom: 20px;
+}
+pre{
+    background-color:#68aee1;
+    color:white;
+    border-radius:20px;
+}
+
+/* Стили для заголовков */
+.code h1 {
+   text-align: center;
+    font-weight: bold;
+    font-family: 'Spectral', serif;
+    
+    border-radius:20px;
+    
+}
+.code pre {
+    word-wrap: break-word; /* Добавлено свойство для переноса текста внутри элемента <pre> */
+}
+.code h2 {
+    text-align: center;
+    font-family: 'Spectral', serif;
+    font-weight: bold;
+    
+    border-radius:20px;
+    margin-top: 20px;
+}
+
+/* Стили для абзацев */
+.code p {
+   
+    overflow-wrap: break-word;
+    font-family: 'Spectral', serif;
+  
+}
+
+/* Стили для списков */
+.code ul {
+    list-style-type: disc; /* Тип маркера списка */
+    margin-left: 20px;
+    font-family: 'Spectral', serif;
+}
+
+.code li {
+    
+   
+    font-family: 'Spectral', serif;
+    
+}
+
+/* Стили для заголовков внутри секций */
+.code section h3 {
+    text-align: center;
+  
+    font-family: 'Spectral', serif;
+    margin-top: 10px;
+    color:#68aee1;
+}
+
+/* Стили для списков внутри секций */
+.code section ul {
+    list-style-type: circle; /* Тип маркера списка */
+    margin-left: 20px;
+    font-family: 'Spectral', serif;
+}
+.startQuizModal{
+    font-family: 'Spectral', serif;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; 
+    height: 300px;/* Добавлен px после числа для указания единиц измерения */
+    background-color: white; /* Заменено bgcolor на background-color */
+    
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+    backdrop-filter: blur(8px);
+    padding: 16px; /* Заменено p на padding */
+    /* border-radius: 30px; */
+    max-height: 80vh;
+    border-radius:30px;
+    /* justify-content: center; */
+    display: flex;
+    /* align-items:center; */
+    text-align: center;
+    flex-direction: column;
 }
 
 

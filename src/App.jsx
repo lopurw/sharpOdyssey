@@ -18,7 +18,7 @@ const Header = () => {
   const [hideHeader, setHideHeader] = useState(false);
 
   useEffect(() => {
-    if (location.pathname === '/Game' || location.pathname === '/Quiz' || location.pathname === '/questions/level2Questions' || location.pathname === '/questions/level1Questions' || location.pathname === '/questions/level3Questions' || location.pathname === '/questions/level4Questions' || location.pathname === '/questions/level5Questions' || location.pathname === '/questions/level6Questions') { 
+    if (location.pathname === '/Game' || location.pathname === '/Quiz' || location.pathname === '/questions/level2' || location.pathname === '/questions/level1' || location.pathname === '/questions/level3' || location.pathname === '/questions/level4' || location.pathname === '/questions/level5' || location.pathname === '/questions/level6') { 
       localStorage.setItem('hideHeader', 'true');
       setHideHeader(true);
     } else {
@@ -53,7 +53,7 @@ const Header = () => {
   );
 };
 
-export default function App() {
+export default function App({score}) {
   return (
     <>
       <Router>
@@ -72,5 +72,7 @@ export default function App() {
         </Routes>
       </Router>
     </>
+    
   );
+  
 }

@@ -1,14 +1,19 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react'; 
 import classes from '../quiz/questions.module.css';
 import Tooltip from '@mui/material/Tooltip';
-
+import Game from '../Game';
 import DialogContent from '@mui/material/DialogContent';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { level1, level2, level3, level4, level5, level6 } from '../questions_levels'; // Путь к вашему файлу questions_levels.js
+import {info1,info2, info3,info4,info5,info6} from '../info';
 import { useParams } from 'react-router-dom';
+
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { common } from '@mui/material/colors';
 export default function Questions() {
     
     const codeSnippet6=`<section>
@@ -658,7 +663,9 @@ export default function Questions() {
     </ul>
 </section>
   `;
+  
 
+  const [openModal, setOpenModal] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -671,9 +678,41 @@ export default function Questions() {
         level5: level5, 
         level6: level6 
     }; 
+    
  
     // Выбираем массив вопросов на основе значения name 
     const questions = questionLevels[name];
+
+   let title;
+   let name_inf
+
+    // Присваиваем значения в зависимости от значения name
+    if (name === 'level1') {
+        
+        title = info1[0].title;
+        name_inf=info1[0].name_info;
+        
+        
+    } else if (name === 'level2') {
+        title = info2[0].title;
+        name_inf=info2[0].name_info;
+    } else if (name === 'level3') {
+        title = info3[0].title;
+        name_inf=info3[0].name_info;
+    } else if (name === 'level4') {
+        title = info4[0].title;
+        name_inf=info4[0].name_info;
+    } else if (name === 'level5') {
+        title = info5[0].title;
+        name_inf=info5[0].name_info;
+    } else if (name === 'level6') {
+        title = info6[0].title;
+        name_inf=info6[0].name_info;
+    } else {
+        // В случае, если значение name не соответствует ни одному уровню
+        console.log('Invalid level name');
+    }
+   
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
@@ -682,6 +721,18 @@ export default function Questions() {
     const [selectedOption, setSelectedOption] = useState(null);
     const [answeredQuestions, setAnsweredQuestions] = useState(Array(questions.length).fill(false));
 
+    const [passingPercentage, setPassingPercentage] = useState(0); // Внутри компонента Game
+
+    useEffect(() => {
+        const newPassingPercentage = Math.round((score / questions.length) * 100);
+        setPassingPercentage(newPassingPercentage);
+        console.log('Passing Percentage:', passingPercentage);
+    }, [score, questions.length]);
+    
+
+    const handleStartQuiz = () => {
+        setOpenModal(false); // Закрываем модальное окно при нажатии кнопки "Начать"
+    };
     const handleAnswerClick = (option, index) => {
         if (!answerSelected) {
             const currentQuestion = questions[currentQuestionIndex];
@@ -705,7 +756,15 @@ export default function Questions() {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
             } else {
                 setQuizCompleted(true);
+                
             }
+        }
+    };
+    const [linkClicked, setLinkClicked] = useState(false); // Состояние для отслеживания нажатия ссылки
+
+    const handleLinkClick = () => {
+        if (!quizCompleted) {
+            history.push(`/Game?score=${score}`);
         }
     };
 
@@ -717,11 +776,39 @@ export default function Questions() {
                 <div className={classes.result}>
                     <p>Тест завершен!</p>
                     <p>Баллы: {score}</p>
+                    
+                    <Link to={`/Game?percentage=${passingPercentage}&name=${name}`} onClick={handleLinkClick}>вернуться</Link>
                 </div>
             </div>
         );
     }
-
+    
+    if (openModal) {
+        return (
+            <div className={classes.main}>
+                <Modal
+                    open={openModal}
+                    onClose={() => {}} // Запретить закрытие модального окна при нажатии вне его области
+                    aria-labelledby="start-quiz-modal-title"
+                    aria-describedby="start-quiz-modal-description"
+                    BackdropProps={{
+                        sx: { backdropFilter: 'blur(8px)' },
+                        invisible: true,
+                    }}
+                >
+                    <Box className={classes.startQuizModal}>
+                        {title} <br />
+                        {name_inf}<br />
+                        <Button onClick={handleStartQuiz} className={classes.startButton}>
+                        Начать
+                    </Button>
+                        
+                        
+                    </Box>
+                </Modal>
+            </div>
+        );
+    }
     return (
         <div className={classes.main}>
             <div className={classes.theory}>
