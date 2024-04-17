@@ -10,13 +10,14 @@ import ButtonNav from './components/ButtonNuv/ButtonNav';
 import './index.css'
 import Questions from './components/Game/quiz/questions';
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
 
 
 
 const Header = () => {
   const location = useLocation();
   const [hideHeader, setHideHeader] = useState(false);
-
+  const [userName, setUserName] = useState('');
   useEffect(() => {
     if (location.pathname === '/Game' || location.pathname === '/Quiz' || location.pathname === '/questions/level2' || location.pathname === '/questions/level1' || location.pathname === '/questions/level3' || location.pathname === '/questions/level4' || location.pathname === '/questions/level5' || location.pathname === '/questions/level6') { 
       localStorage.setItem('hideHeader', 'true');
@@ -25,6 +26,15 @@ const Header = () => {
       localStorage.setItem('hideHeader', 'false');
       setHideHeader(false);
     }
+    axios.get('http://localhost:5151/auth/user', {
+      withCredentials: true
+    })
+        .then(response => {
+          setUserName(response.data.userName)// Выводим данные пользователя в консоль
+        })
+        .catch(error => {
+          console.error('Error fetching user data:', error);
+        });
   }, [location]);
 
   if (hideHeader) {
@@ -47,7 +57,7 @@ const Header = () => {
       </nav>
       <div className="prof">
         <img src="src\round-image.png" alt="" />
-        <p>АРина</p>
+        <p>{userName}</p>
       </div>
     </header>
   );
