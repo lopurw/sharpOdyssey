@@ -42,7 +42,7 @@ export default function Log_In() {
                 console.log(data.token);
                 document.cookie = `cook=${data.token}; path=/`;
                 console.log('Registration Success');
-                setRedirectTo('/blog');
+                setRedirectTo('/page1');
             } else {
                 console.error('Login Failed');
             }
