@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("progQuiz.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+237adf61f03026cc01cb4c3d9faa7eb9e12c42d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58a4259ef471b810d7da22862034730a03c15da2")]
 [assembly: System.Reflection.AssemblyProductAttribute("progQuiz.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("progQuiz.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
