@@ -671,6 +671,7 @@ export default function Questions() {
 </section>
   `;
   const [levelId, setLevelId] = useState("");
+  const [levelData, setLevelData] = useState({});
 
   const [openModal, setOpenModal] = React.useState(true);
   const [open, setOpen] = React.useState(false);
@@ -699,6 +700,7 @@ export default function Questions() {
       );
       // Получаем данные из ответа в формате JSON
       const data = response.data;
+      setLevelData(data);
       // Обновляем состояние переменной theory полученными данными
       setTheory(data.theory);
       setLevelId(id);
@@ -734,34 +736,34 @@ export default function Questions() {
   // Присваиваем значения в зависимости от значения name
   if (name === "level1") {
     fetchLevelTheory(1);
-    title = info1[0].title;
-    name_inf = info1[0].name_info;
-    lenght = info1[0].lenght;
+    title = `Уровень ` + levelData.levelId;
+    name_inf = levelData.name;
+    lenght = levelData.length;
   } else if (name === "level2") {
     fetchLevelTheory(2);
-    title = info2[0].title;
-    name_inf = info2[0].name_info;
-    lenght = info2[0].lenght;
+    title = `Уровень ` + levelData.levelId;
+    name_inf = levelData.name;
+    lenght = levelData.length;
   } else if (name === "level3") {
     fetchLevelTheory(3);
-    title = info3[0].title;
-    name_inf = info3[0].name_info;
-    lenght = info3[0].lenght;
+    title = `Уровень ` + levelData.levelId;
+    name_inf = levelData.name;
+    lenght = levelData.length;
   } else if (name === "level4") {
     fetchLevelTheory(4);
-    title = info4[0].title;
-    name_inf = info4[0].name_info;
-    lenght = info4[0].lenght;
+    title = `Уровень ` + levelData.levelId;
+    name_inf = levelData.name;
+    lenght = levelData.length;
   } else if (name === "level5") {
     fetchLevelTheory(5);
-    title = info5[0].title;
-    name_inf = info5[0].name_info;
-    lenght = info5[0].lenght;
+    title = `Уровень ` + levelData.levelId;
+    name_inf = levelData.name;
+    lenght = levelData.length;
   } else if (name === "level6") {
     fetchLevelTheory(6);
-    title = info6[0].title;
-    name_inf = info6[0].name_info;
-    lenght = info6[0].lenght;
+    title = `Уровень ` + levelData.levelId;
+    name_inf = levelData.name;
+    lenght = levelData.length;
   } else {
     // В случае, если значение name не соответствует ни одному уровню
     console.log("Invalid level name");
@@ -865,9 +867,9 @@ export default function Questions() {
         >
           <Box className={classes.startQuizModal}>
             <div className={classes.img_c_sharp}><img src={cSharpImage} alt="" /></div>
-            <p className={classes.level}>{title}</p>
-            <p className={classes.title1}>{name_inf}</p>
-            <p className={classes.lenght}>Вопросов: {lenght}</p>
+            <p className={classes.level}>{`Уровень ` + levelData.levelId}</p>
+            <p className={classes.title1}>{levelData.name}</p>
+            <p className={classes.lenght}>Вопросов: {levelData.length}</p>
             
            <div className={classes.startButton}> <Button onClick={handleStartQuiz} >
               Начать
