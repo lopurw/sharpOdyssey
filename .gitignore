@@ -1,6 +1,6 @@
 ﻿/backend/.vs/progQuiz
-/backend/src/progQuiz.API/obj/Debug/net8.0
-/backend/src/progQuiz.API/bin/Debug/net8.0
+/backend/src/progQuiz.API/obj
+/backend/src/progQuiz.API/bin
 ### react template
 .DS_*
 *.log
