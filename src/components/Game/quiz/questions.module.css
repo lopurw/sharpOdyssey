@@ -1,94 +1,86 @@
-
-
-.modalonlevels{
-    background-color:#68aee1;
-    
-
+.modalonlevels {
+  background-color: #68aee1;
 }
-.modal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px; 
-    height: 400px;/* Добавлен px после числа для указания единиц измерения */
-    background-color: white; /* Заменено bgcolor на background-color */
-    
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
-    backdrop-filter: blur(8px);
-    padding: 16px; /* Заменено p на padding */
-    /* border-radius: 30px; */
-    max-height: 80vh;
-    
-    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px; /* Добавлен px после числа для указания единиц измерения */
+  background-color: white; /* Заменено bgcolor на background-color */
+
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+  backdrop-filter: blur(8px);
+  padding: 16px; /* Заменено p на padding */
+  /* border-radius: 30px; */
+  max-height: 80vh;
+
+  overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
   /* overflow-x: hidden;  */
-  border-radius:40px;
+  border-radius: 40px;
 }
-.main{
-    height: 736px;
-    width: 100%;
-    background-image:url('/src/background_quiz.jpg');
-    backdrop-filter: blur(100px);
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    
+.main {
+  height: 736px;
+  width: 100%;
+  background-image: url("/src/background_quiz.jpg");
+  backdrop-filter: blur(100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Тест на skills верстальщика */
 .quiz {
-    display: flex;
-    flex-direction: column;
-    max-width: 450px;
-    width: 100%;
-    border-radius: 20px;
-    background-color: white;
-    border-radius:30px;
-   font-family: 'Spectral', serif;
-   margin-right: 200px;
-    
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: white;
+  border-radius: 30px;
+  font-family: "Spectral", serif;
+  margin-right: 200px;
 }
 
-
 .progress {
-    height: 10px;
-    border-radius: 30px;
-    background-color: rgb(232, 232, 232);
-   font-family: 'Spectral', serif;
-   margin-top: 20px;
-   background: rgb(271, 23, 106);
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(90deg, rgb(44, 45, 72), rgb(114, 145, 225));
+  height: 10px;
+  border-radius: 30px;
+  background-color: rgb(232, 232, 232);
+  font-family: "Spectral", serif;
+  margin-top: 20px;
+  background: rgb(271, 23, 106);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(90deg, rgb(44, 45, 72), rgb(114, 145, 225));
 }
 
 .quiz__progress-inner {
-    height: 100%;
-    border-radius: 30px;
-    width: 70%;
-    
-   font-family: 'Spectral', serif;
+  height: 100%;
+  border-radius: 30px;
+  width: 70%;
+
+  font-family: "Spectral", serif;
 }
 
-
-.content{
-    padding: 30px 30px 20px;
-    flex: 1 0 auto;
-   font-family: 'Spectral', serif;
+.content {
+  padding: 30px 30px 20px;
+  flex: 1 0 auto;
+  font-family: "Spectral", serif;
 }
 
-.title{
-    font-size: 25px;
-    font-weight: 600;
-   font-family: 'Spectral', serif;
-   margin-bottom: 10px;
+.title {
+  font-size: 25px;
+
+  font-family: "Spectral", serif;
+  margin-bottom: 10px;
 }
 
-.list{
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    padding: 20px 0px;
-   font-family: 'Spectral', serif;
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 20px 0px;
+  font-family: "Spectral", serif;
 }
 
 /* .quiz__option {
@@ -116,238 +108,240 @@
     
 } */
 
-
-
-
-
-.footer{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid lightgrey;
-   font-family: 'Spectral', serif;
-   
-   
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  font-family: "Spectral", serif;
 }
 
-
-
-.but{
-    height: 40px;
-    padding: 0 13px;
-    font-size: 18px;
-    font-weight: 400;
-    color: #fff;
-    border-radius: 20px;
-    background: #4b7db0;
-    transition: 0.3s;
-   font-family: 'Spectral', serif;
-   margin-left: 290px;
-   border:solid #4b7db0 2px;
-   
-    
+.but {
+  height: 40px;
+  padding: 0 13px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 20px;
+  background: #4b7db0;
+  transition: 0.3s;
+  font-family: "Spectral", serif;
+  margin-left: 290px;
+  border: solid #4b7db0 2px;
 }
-.but1{
-    height: 80px;
-    width: 200px;
-    padding: 0 13px;
-    font-size: 36px;
-    font-weight: 400;
-    color: #fff;
-    border-radius: 40px;
-    background: #4b7db0;
-    transition: 0.3s;
-   font-family: 'Spectral', serif;
-   /* margin-left: 290px; */
-   border:solid #4b7db0 2px;
-   position: relative;
-   bottom: 270px;
-   left: 870px;
-   margin: 0 auto;
-   
-    
+.but1 {
+  height: 80px;
+  width: 200px;
+  padding: 0 13px;
+  font-size: 36px;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 40px;
+  background: #4b7db0;
+  transition: 0.3s;
+  font-family: "Spectral", serif;
+  /* margin-left: 290px; */
+  border: solid #4b7db0 2px;
+  position: relative;
+  bottom: 270px;
+  left: 870px;
+  margin: 0 auto;
 }
-.but:hover{
-    color: #ffffff;
+.but:hover {
+  color: #ffffff;
   background-color: #68aee1;
- font-family: 'Spectral', serif;
-  
-  
-
+  font-family: "Spectral", serif;
 }
 /* Выводим результаты теста */
-.result{
-    max-width: 450px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px 10px;
-   font-family: 'Spectral', serif;
+.result {
+  max-width: 450px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 10px;
+  font-family: "Spectral", serif;
 }
-.options{
-   
-        background:#4b7db0;
-        /*border: 1px solid #84c5fe;*/
-        border-radius: 20px;
-        padding: 0px 15px;
-        min-height: 44px;
-        font-size: 17px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        text-align: left;
-        justify-content: space-between;
-        border: 2px solid #4b7db0;
-       font-family: 'Spectral', serif;
-       color: white;
-   
-    
-   
+.options {
+  background: #4b7db0;
+  /*border: 1px solid #84c5fe;*/
+  border-radius: 20px;
+  padding: 0px 15px;
+  min-height: 44px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: space-between;
+  border: 2px solid #4b7db0;
+  font-family: "Spectral", serif;
+  color: white;
 }
-.options:hover{
-    
-    background: #68aee1;
-   font-family: 'Spectral', serif;
-   
-    
+.options:hover {
+  background: #68aee1;
+  font-family: "Spectral", serif;
 }
-.active{
-    background:  #68aee1;
-    
-   font-family: 'Spectral', serif;
+.active {
+  background: #68aee1;
+
+  font-family: "Spectral", serif;
 }
 .style1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px; 
-    height: 800px;/* Добавлен px после числа для указания единиц измерения */
-    background-color: white; /* Заменено bgcolor на background-color */
-    
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
-    backdrop-filter: blur(8px);
-    padding: 16px; /* Заменено p на padding */
-    /* border-radius: 30px; */
-    max-height: 80vh;
-    
-    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
-  /* overflow-x: hidden;  */
-  border-radius:40px;
-  }
-  .style{
-    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
-    /* overflow-x: hidden;  */
-   
-  }
-  .text{
-    max-width: 720px;
-  }
-  .style1::-webkit-scrollbar {
-    width: 0px; 
-  }.style1 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Цвет ползунка */
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px; /* Добавлен px после числа для указания единиц измерения */
+  background-color: white; /* Заменено bgcolor на background-color */
 
-  .code{
-    font-size: 20px;
-    display: flex;
-    max-width: 720px;
-    overflow-wrap: break-word;
-    /* background-color: red; */
-  }
-  /* Стили для секций */
-.code section {
-    margin-bottom: 20px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+  backdrop-filter: blur(8px);
+  padding: 16px; /* Заменено p на padding */
+  /* border-radius: 30px; */
+  max-height: 80vh;
+
+  overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  /* overflow-x: hidden;  */
+  border-radius: 40px;
 }
-pre{
-    background-color:#68aee1;
-    color:white;
-    border-radius:20px;
+.style {
+  overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  /* overflow-x: hidden;  */
+}
+.text {
+  max-width: 720px;
+}
+.style1::-webkit-scrollbar {
+  width: 0px;
+}
+.style1 ::-webkit-scrollbar-thumb {
+  background-color: #888; /* Цвет ползунка */
+}
+
+.code {
+  font-size: 20px;
+  display: flex;
+  max-width: 720px;
+  overflow-wrap: break-word;
+  /* background-color: red; */
+}
+/* Стили для секций */
+.code section {
+  margin-bottom: 20px;
+}
+pre {
+  background-color: #68aee1;
+  color: white;
+  border-radius: 20px;
 }
 
 /* Стили для заголовков */
 .code h1 {
-   text-align: center;
-    font-weight: bold;
-    font-family: 'Spectral', serif;
-    
-    border-radius:20px;
-    
+  text-align: center;
+  font-weight: bold;
+  font-family: "Spectral", serif;
+
+  border-radius: 20px;
 }
 .code pre {
-    word-wrap: break-word; /* Добавлено свойство для переноса текста внутри элемента <pre> */
+  word-wrap: break-word; /* Добавлено свойство для переноса текста внутри элемента <pre> */
 }
 .code h2 {
-    text-align: center;
-    font-family: 'Spectral', serif;
-    font-weight: bold;
-    
-    border-radius:20px;
-    margin-top: 20px;
+  text-align: center;
+  font-family: "Spectral", serif;
+  font-weight: bold;
+
+  border-radius: 20px;
+  margin-top: 20px;
 }
 
 /* Стили для абзацев */
 .code p {
-   
-    overflow-wrap: break-word;
-    font-family: 'Spectral', serif;
-  
+  overflow-wrap: break-word;
+  font-family: "Spectral", serif;
 }
 
 /* Стили для списков */
 .code ul {
-    list-style-type: disc; /* Тип маркера списка */
-    margin-left: 20px;
-    font-family: 'Spectral', serif;
+  list-style-type: disc; /* Тип маркера списка */
+  margin-left: 20px;
+  font-family: "Spectral", serif;
 }
 
 .code li {
-    
-   
-    font-family: 'Spectral', serif;
-    
+  font-family: "Spectral", serif;
 }
 
 /* Стили для заголовков внутри секций */
 .code section h3 {
-    text-align: center;
-  
-    font-family: 'Spectral', serif;
-    margin-top: 10px;
-    color:#68aee1;
+  text-align: center;
+
+  font-family: "Spectral", serif;
+  margin-top: 10px;
+  color: #68aee1;
 }
 
 /* Стили для списков внутри секций */
 .code section ul {
-    list-style-type: circle; /* Тип маркера списка */
-    margin-left: 20px;
-    font-family: 'Spectral', serif;
+  list-style-type: circle; /* Тип маркера списка */
+  margin-left: 20px;
+  font-family: "Spectral", serif;
 }
-.startQuizModal{
-    font-family: 'Spectral', serif;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px; 
-    height: 300px;/* Добавлен px после числа для указания единиц измерения */
-    background-color: white; /* Заменено bgcolor на background-color */
-    
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
-    backdrop-filter: blur(8px);
-    padding: 16px; /* Заменено p на padding */
-    /* border-radius: 30px; */
-    max-height: 80vh;
-    border-radius:30px;
-    /* justify-content: center; */
-    display: flex;
-    /* align-items:center; */
-    text-align: center;
-    flex-direction: column;
+.startQuizModal {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px; /* Добавлен px после числа для указания единиц измерения */
+  background-color: white; /* Заменено bgcolor на background-color */
+
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+  backdrop-filter: blur(8px);
+  padding: 16px; /* Заменено p на padding */
+  /* border-radius: 30px; */
+  max-height: 80vh;
+  border-radius: 30px;
+  justify-content: center;
+  float: left;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
+.startQuizModal img {
+  height: 80px;
+  width: 80px;
+}
+.level {
+  font-size: 25px;
+  /* margin-top: 25px; */
 
-
-
+  color: #252755;
+  font-family: "Rubik Mono One", monospace;
+}
+.title1 {
+  color: #4e76a7;
+  font-size: 30px;
+   margin-top: 5px;
+  /*margin-right: 20px; 
+  margin-left: 30px; */
+  /* float: left; */
+}
+.lenght {
+  /* margin-top: 40px; */
+  color: #4e76a7;
+  font-size: 20px;
+  margin-top: 5px;
+}
+.img_c_sharp {
+  /* float: left; */
+}
+.startButton {
+  background-color: #c9e1ff;
+  border-radius: 20px;
+  margin-top:20px;
+  
+}
