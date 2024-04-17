@@ -15,7 +15,7 @@ export default function SignUp() {
         // Validation checks
 
         try {
-            const response = await fetch('auth/register', {
+            const response = await fetch('http://localhost:5151/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',//работа с запросами(fetch или axios )
