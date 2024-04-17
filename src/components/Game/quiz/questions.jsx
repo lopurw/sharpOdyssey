@@ -14,9 +14,10 @@ import { useParams } from 'react-router-dom';
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { common } from '@mui/material/colors';
+import axios from "axios";
 export default function Questions() {
-    
-    const codeSnippet6=`<section>
+
+    const codeSnippet6 = `<section>
     <h2>Обработка исключений: try-catch блок</h2>
     <p>В блоке try размещается код, который может привести к исключению. Если исключение происходит, выполнение кода в блоке try прерывается, и управление передается в блок catch, где можно обработать исключение.</p>
     <pre><code>
@@ -98,7 +99,7 @@ export default function Questions() {
     <h3>Структурирование проекта</h3>
     <p>Соблюдайте правила структурирования проекта. Разделяйте код на логические модули и используйте пространства имен для организации классов. Это поможет улучшить читаемость, поддерживаемость и масштабируемость вашего кода.</p>
   </section>`
-    const codeSnippet5=`<section>
+    const codeSnippet5 = `<section>
     <h2>Классы и объекты</h2>
     <p>Класс - это шаблон или формальное описание объекта, определяющее его свойства (поля) и действия (методы). Объект - это конкретный экземпляр класса, который имеет свои собственные уникальные значения свойств.</p>
     <pre><code>
@@ -262,7 +263,7 @@ export default function Questions() {
       }
     </code></pre>
   </section>`
-    const codeSnippet4=`<section>
+    const codeSnippet4 = `<section>
     <h2>Объявление и вызов методов: Параметры, возвращаемые значения</h2>
     <p>Методы представляют собой блоки кода, которые выполняют определенные задачи. Они могут принимать входные данные (параметры), выполнять операции над ними и возвращать результаты.</p>
     
@@ -504,7 +505,7 @@ export default function Questions() {
     </code></pre>
   </section>
   `
-    const codeSnippet2=`<section>
+    const codeSnippet2 = `<section>
     <h2>Условные операторы: if, else if, else</h2>
     <p>Условные операторы позволяют выполнять определенный блок кода, только если заданное условие истинно. В C# основным условным оператором является if. Синтаксис if выглядит следующим образом:</p>
     <pre class="kod">
@@ -663,56 +664,93 @@ export default function Questions() {
     </ul>
 </section>
   `;
-  
+    const [levelId, setLevelId] = useState('');
 
-  const [openModal, setOpenModal] = React.useState(true);
+
+    const [openModal, setOpenModal] = React.useState(true);
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const {name} = useParams();
-    const questionLevels = { 
+    const questionLevels = {
         level1: level1,
-        level2: level2, 
-        level3: level3, 
-        level4: level4, 
-        level5: level5, 
-        level6: level6 
-    }; 
-    
- 
-    // Выбираем массив вопросов на основе значения name 
+        level2: level2,
+        level3: level3,
+        level4: level4,
+        level5: level5,
+        level6: level6
+    };
+    const [theory, setTheory] = useState('');
+
+
+    // Создаем асинхронную функцию для получения данных с сервера
+    async function fetchLevelTheory(id) {
+        try {
+            // Отправляем GET-запрос к API по адресу http://localhost:5151/api/level/1
+            const response = await axios.get(`http://localhost:5151/api/level/${id}`,{
+                withCredentials: true // Включаем передачу кук
+            });
+            // Получаем данные из ответа в формате JSON
+            const data = response.data;
+            // Обновляем состояние переменной theory полученными данными
+            setTheory(data.theory);
+            setLevelId(id);
+        } catch (error) {
+            // Обрабатываем возможные ошибки
+            console.error('Ошибка при получении теории уровня:', error);
+        }
+    }
+    async function fetchResult(resultData) {
+        try {
+            // Отправляем GET-запрос к API по адресу http://localhost:5151/api/level/1
+            const response = await axios.post(`http://localhost:5151/api/level`, resultData, {
+                    withCredentials: true // Включаем передачу кук
+                });
+            // Получаем данные из ответа в формате JSON
+
+        } catch (error) {
+            // Обрабатываем возможные ошибки
+            console.error('Ошибка при отправке', error);
+        }
+    }
+
+
+    // Выбираем массив вопросов на основе значения name
     const questions = questionLevels[name];
 
-   let title;
-   let name_inf
+    let title;
+    let name_inf
 
     // Присваиваем значения в зависимости от значения name
     if (name === 'level1') {
-        
+        fetchLevelTheory(1);
         title = info1[0].title;
-        name_inf=info1[0].name_info;
-        
-        
+        name_inf = info1[0].name_info;
     } else if (name === 'level2') {
+        fetchLevelTheory(2);
         title = info2[0].title;
-        name_inf=info2[0].name_info;
+        name_inf = info2[0].name_info;
     } else if (name === 'level3') {
+        fetchLevelTheory(3);
         title = info3[0].title;
-        name_inf=info3[0].name_info;
+        name_inf = info3[0].name_info;
     } else if (name === 'level4') {
+        fetchLevelTheory(4);
         title = info4[0].title;
-        name_inf=info4[0].name_info;
+        name_inf = info4[0].name_info;
     } else if (name === 'level5') {
+        fetchLevelTheory(5);
         title = info5[0].title;
-        name_inf=info5[0].name_info;
+        name_inf = info5[0].name_info;
     } else if (name === 'level6') {
+        fetchLevelTheory(6);
         title = info6[0].title;
-        name_inf=info6[0].name_info;
+        name_inf = info6[0].name_info;
     } else {
         // В случае, если значение name не соответствует ни одному уровню
         console.log('Invalid level name');
     }
-   
+
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
@@ -728,7 +766,7 @@ export default function Questions() {
         setPassingPercentage(newPassingPercentage);
         console.log('Passing Percentage:', passingPercentage);
     }, [score, questions.length]);
-    
+
 
     const handleStartQuiz = () => {
         setOpenModal(false); // Закрываем модальное окно при нажатии кнопки "Начать"
@@ -755,8 +793,15 @@ export default function Questions() {
             if (currentQuestionIndex + 1 < questions.length) {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
             } else {
+                const levelResult = (Math.floor((score / questions.length / 3) * 10)).toString()
+                const data = {
+                    levelId: parseInt(levelId),
+                    levelResult: levelResult
+                };
+                fetchResult(data);
                 setQuizCompleted(true);
-                
+
+
             }
         }
     };
@@ -771,39 +816,42 @@ export default function Questions() {
     const progressWidth = Math.round(((currentQuestionIndex) / questions.length) * 100) + "%";
 
     if (quizCompleted) {
+
         return (
             <div className={classes.main}>
                 <div className={classes.result}>
                     <p>Тест завершен!</p>
                     <p>Баллы: {score}</p>
-                    
-                    <Link to={`/Game?percentage=${passingPercentage}&name=${name}`} onClick={handleLinkClick}>вернуться</Link>
+
+                    <Link to={`/Game?percentage=${passingPercentage}&name=${name}`}
+                          onClick={handleLinkClick}>вернуться</Link>
                 </div>
             </div>
         );
     }
-    
+
     if (openModal) {
         return (
             <div className={classes.main}>
                 <Modal
                     open={openModal}
-                    onClose={() => {}} // Запретить закрытие модального окна при нажатии вне его области
+                    onClose={() => {
+                    }} // Запретить закрытие модального окна при нажатии вне его области
                     aria-labelledby="start-quiz-modal-title"
                     aria-describedby="start-quiz-modal-description"
                     BackdropProps={{
-                        sx: { backdropFilter: 'blur(8px)' },
+                        sx: {backdropFilter: 'blur(8px)'},
                         invisible: true,
                     }}
                 >
                     <Box className={classes.startQuizModal}>
-                        {title} <br />
-                        {name_inf}<br />
+                        {title} <br/>
+                        {name_inf}<br/>
                         <Button onClick={handleStartQuiz} className={classes.startButton}>
-                        Начать
-                    </Button>
-                        
-                        
+                            Начать
+                        </Button>
+
+
                     </Box>
                 </Modal>
             </div>
@@ -815,7 +863,7 @@ export default function Questions() {
                 <Tooltip title="Нажми, чтобы ознакомиться" placement="top">
                     <button onClick={handleOpen} className={classes.but1}>Теория</button>
                 </Tooltip>
-            
+
             </div>
             <Modal
                 open={open}
@@ -823,33 +871,35 @@ export default function Questions() {
                 aria-labelledby="parent-modal-title"
                 aria-describedby="parent-modal-description"
                 BackdropProps={{
-                    sx: { backdropFilter: 'blur(8px)' }, // Применяем размытие к заднему фону
+                    sx: {backdropFilter: 'blur(8px)'}, // Применяем размытие к заднему фону
                     invisible: true, // Убираем затемнение
-                  }}
+                }}
             >
                 <Box className={classes.style1}>
-             
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                    
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 5, ml: 5, mr: 5, overflowX: 'hidden' }} className ={classes.style}>
-                <div className={classes.code}>
-                    <div dangerouslySetInnerHTML={{ __html: codeSnippet6 }} className={classes.text}/>
-              </div>
-                
-                </Typography>
-                
+
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{mt: 5, ml: 5, mr: 5, overflowX: 'hidden'}}
+                                className={classes.style}>
+                        <div className={classes.code}>
+                            <div dangerouslySetInnerHTML={{__html: theory}} className={classes.text}/>
+                        </div>
+
+                    </Typography>
+
                 </Box>
             </Modal>
             <div className={classes.quiz}>
-                <div className={classes.progress} style={{ width: progressWidth }}></div>
+                <div className={classes.progress} style={{width: progressWidth}}></div>
                 <div className={classes.content}>
                     <h3 className={classes.title}>
                         {questions[currentQuestionIndex].question}
                     </h3>
                     <ul className={classes.list}>
                         {questions[currentQuestionIndex].options.map((option, index) => (
-                            <li key={index} onClick={() => handleAnswerClick(option, index)} className={`${classes.options} ${selectedOption === index ? classes.active : ""} ${answeredQuestions[currentQuestionIndex] ? classes.disabled : ""}`}>
+                            <li key={index} onClick={() => handleAnswerClick(option, index)}
+                                className={`${classes.options} ${selectedOption === index ? classes.active : ""} ${answeredQuestions[currentQuestionIndex] ? classes.disabled : ""}`}>
                                 {option}
                             </li>
                         ))}

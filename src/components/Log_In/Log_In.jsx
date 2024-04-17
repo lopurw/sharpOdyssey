@@ -25,7 +25,7 @@ export default function Log_In() {
         e.preventDefault(); 
 
         try {
-            const response = await fetch('auth/login', {
+            const response = await fetch('http://localhost:5151/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,10 +36,12 @@ export default function Log_In() {
             const data = await response.json();
 
             if (response.ok) {
-                
+
                 setJwtToken(data.token);
                 localStorage.setItem('jwtToken', data.token);
                 console.log(data.token);
+                document.cookie = `cook=${data.token}; path=/`;
+                console.log('Registration Success');
                 setRedirectTo('/blog');
             } else {
                 console.error('Login Failed');
