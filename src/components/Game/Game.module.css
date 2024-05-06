@@ -1,137 +1,217 @@
-*{
-    padding: 0;
-    margin: 0;;
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
 }
-.str1{
-    height: 737px;
-    width: 100%;
-    position: relative;
-    background-image:url(/src/background_game.png);
+.str1 {
+  height: 737px;
+  width: 100%;
+  /* position: relative; */
+  background-image: url(/src/background_game.png);
 }
-.img1{
-    position: absolute;
-    top:10px;
-  
+.img1 {
+  position: absolute;
+  top: 10px;
 }
-.home1{
-    width: 160px;
+.home1 {
+  width: 160px;
 }
-.img2{
-    position: absolute;
-    top:290px;
+.img2 {
+  position: absolute;
+  top: 290px;
 }
-.home2{
-    width: 140px;
+.home2 {
+  width: 140px;
 }
-.img3{
-    position: absolute;
-    top:345px;
-    left: 210px;
+.img3 {
+  position: absolute;
+  top: 345px;
+  left: 210px;
 }
-.home3{
-    width: 180px;
+.home3 {
+  width: 180px;
 }
-.img4{
-    position: absolute;
-    top:310px;
-    left: 700px;
+.img4 {
+  position: absolute;
+  top: 310px;
+  left: 700px;
 }
-.home4{
-    width: 190px;
+.home4 {
+  width: 190px;
 }
-.img5{
-    position: absolute;
-    top:90px;
-    left: 1120px;
-  
+.img5 {
+  position: absolute;
+  top: 90px;
+  left: 1120px;
 }
-.home5{
-    width: 150px;
+.home5 {
+  width: 150px;
 }
-.img6{
-    position: absolute;
-    top:390px;
-    left: 1240px;
-  
+.img6 {
+  position: absolute;
+  top: 390px;
+  left: 1240px;
 }
-.home6{
-    width: 180px;
+.home6 {
+  width: 180px;
 }
 .stars {
-    position: relative;
+  position: relative;
 }
 
 .star_home1 {
-    position: absolute;
-    margin-left: 65px;
-    
-    margin-top: 155px; /* Подвинуть вниз */
+  position: absolute;
+  margin-left: 65px;
+
+  margin-top: 155px; /* Подвинуть вниз */
 }
 .star_home2 {
-    position: absolute;
-    margin-left: 28px;
-    
-    margin-top: 465px; /* Подвинуть вниз */
+  position: absolute;
+  margin-left: 28px;
+
+  margin-top: 465px; /* Подвинуть вниз */
 }
 .style1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px; 
-    height: 400px;/* Добавлен px после числа для указания единиц измерения */
-    background-color: white; /* Заменено bgcolor на background-color */
-    
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
-    backdrop-filter: blur(8px);
-    padding: 16px; /* Заменено p на padding */
-    /* border-radius: 30px; */
-    max-height: 80vh;
-    
-    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
-  overflow-x: hidden; 
-  border-radius:100px;
-  }
-  .style{
-    overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
-    overflow-x: hidden; 
-   
-  }
-  .style1::-webkit-scrollbar {
-    width: 5px; /* Уменьшите ширину скроллбара */
-  }.style1 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Цвет ползунка */
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px; /* Добавлен px после числа для указания единиц измерения */
+  background-color: white; /* Заменено bgcolor на background-color */
 
-  
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* Исправлено свойство boxShadow */
+  backdrop-filter: blur(8px);
+  padding: 16px; /* Заменено p на padding */
+  /* border-radius: 30px; */
+  max-height: 80vh;
+
+  overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  overflow-x: hidden;
+  border-radius: 100px;
+}
+.style {
+  overflow-y: overlay; /* Позволяет вертикальной прокрутке, скрывает полосу прокрутки */
+  overflow-x: hidden;
+}
+.style1::-webkit-scrollbar {
+  width: 5px; /* Уменьшите ширину скроллбара */
+}
+.style1 ::-webkit-scrollbar-thumb {
+  background-color: #888; /* Цвет ползунка */
+}
+.style1 {
+  border-radius: 30px !important;
+
+  align-items: center;
+  text-align: center;
+}
 .star_home3 {
-    position: absolute;
-    margin-left: 290px;
-    
-    margin-top: 510px; /* Подвинуть вниз */
+  position: absolute;
+  margin-left: 290px;
+
+  margin-top: 510px; /* Подвинуть вниз */
 }
 .star_home4 {
-    position: absolute;
-    margin-left: 779px;
-    
-    margin-top: 450px; /* Подвинуть вниз */
+  position: absolute;
+  margin-left: 779px;
+
+  margin-top: 450px; /* Подвинуть вниз */
 }
 .star_home5 {
-    position: absolute;
-    margin-left: 1170px;
-    
-    margin-top: 240px; /* Подвинуть вниз */
+  position: absolute;
+  margin-left: 1170px;
+
+  margin-top: 240px; /* Подвинуть вниз */
 }
 .star_home6 {
-    position: absolute;
-    margin-left: 1320px;
-    
-    margin-top: 530px; /* Подвинуть вниз */
-}
-.img_roles{
-    width: 70px;
-    margin-top: 10px;
-    margin-left: 1440px;
-}
+  position: absolute;
+  margin-left: 1320px;
 
-
+  margin-top: 530px; /* Подвинуть вниз */
+}
+.img_roles {
+  width: 70px;
+  margin-top: 10px;
+  margin-left: 1440px;
+}
+.starAll {
+  width: 65px;
+  margin-top: -115px;
+  color: yellow;
+  margin-left: 1300px;
+  font-size: 100px;
+  z-index: 3;
+  position: absolute;
+}
+.allStars p {
+  margin-left: 1380px;
+  font-size: 90px;
+  width: 65px;
+  color: white;
+  position: absolute;
+  margin-top: -90px;
+}
+.logo p {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-size: 70px;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+  margin-bottom: 30px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 500px;
+  height: 100px;
+  background-color: rgb(44, 50, 76);
+  position: absolute;
+  z-index: 4;
+  border-radius: 50px;
+  margin-left: 450px;
+  margin-top: 30px;
+}
+.hidden {
+  display: none;
+}
+.loading {
+  position: absolute;
+  top: 300px;
+  left: 46%;
+}
+.lock2,
+.lock3,
+.lock4,
+.lock5,
+.lock6 {
+  z-index: 3;
+  position: absolute;
+  width: 50px;
+}
+.lock2 {
+  left: 57px;
+  top: 20px;
+}
+.lock3 {
+  left: 110px;
+  top: 20px;
+}
+.lock3 {
+  left: 110px;
+  top: 20px;
+}
+.lock4 {
+  left: 110px;
+  top: 20px;
+}
+.lock5 {
+  left: 80px;
+  top: 30px;
+}
+.lock6 {
+  left: 100px;
+  top: 30px;
+}

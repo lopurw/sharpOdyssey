@@ -155,6 +155,7 @@
 /* Выводим результаты теста */
 .result {
   max-width: 450px;
+  height: 300px;
   width: 100%;
   background-color: white;
   border-radius: 10px;
@@ -325,7 +326,7 @@ pre {
 .title1 {
   color: #4e76a7;
   font-size: 30px;
-   margin-top: 5px;
+  margin-top: 5px;
   /*margin-right: 20px; 
   margin-left: 30px; */
   /* float: left; */
@@ -340,8 +341,49 @@ pre {
   /* float: left; */
 }
 .startButton {
-  background-color: #c9e1ff;
+  background-color: #252755;
   border-radius: 20px;
-  margin-top:20px;
-  
+  margin-top: 20px;
+  border: none;
+  height: 40px;
+  width: 100%;
+  color: white;
+  font-family: "Spectral", serif;
+  font-size: 20px;
 }
+.startButton:hover {
+  background-color: #131430;
+  transition: 0.3s;
+}
+.star1 {
+  font-size: 190px !important;
+  position: absolute !important;
+  top: -50px !important;
+}
+.star2 {
+  font-size: 190px !important;
+  position: absolute !important;
+  left: 140px !important;
+  top: -70px !important;
+}
+.star3 {
+  font-size: 190px !important;
+  position: absolute !important;
+  left: 280px !important;
+  top: -50px !important;
+}
+.home {
+  width: 85px;
+  height: 85px;
+  z-index: 1;
+  margin-top: 190px;
+  margin-left: 100px;
+}
+.retry {
+  width: 90px;
+  height: 90px;
+  z-index: 1;
+  margin-top: 190px;
+  margin-left: 50px;
+}
+
