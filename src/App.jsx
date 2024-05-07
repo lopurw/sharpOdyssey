@@ -15,7 +15,7 @@ import Tooltip from "@mui/material/Tooltip";
 import ProfImg from "./user.jpg";
 import {useNavigate} from "react-router-dom";
 
-const Header = () => {
+const Header = ({isAuthenticated, setIsAuthenticated}) => {
   const [profileImage, setProfileImage] = useState(""); // Сначала устанавливаем пустую строку
   const [isHovering, setIsHovering] = useState(false);
   const location = useLocation();
@@ -91,7 +91,8 @@ const Header = () => {
   const handleLogout = () => {
     document.cookie = 'cook=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     setUserName("");
-    setProfileImage(null)
+    setProfileImage(ProfImg)
+    setIsAuthenticated(false)
     navigate('/SignUp');
   };
 
@@ -110,6 +111,7 @@ const Header = () => {
           <ButtonNav> Обучение</ButtonNav>
         </Link>
       </nav>
+      {isAuthenticated &&
       <div className="prof">
         <Tooltip title="Изменить фото" placement="top">
           <img
@@ -124,19 +126,21 @@ const Header = () => {
           {isHovering && <button onClick={handleLogout}>Выйти</button>}
         </div>
       </div>
+    }
     </header>
   );
 };
 
 export default function App({ score }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <>
       <Router>
-        <Header />
+        <Header isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <Routes>
           <Route path="/" element={<Page1 />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Log_In" element={<Log_In />} />
+          <Route path="/Log_In" element={<Log_In setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/Game" element={<Game />} />
 
           <Route path="/questions/:name" element={<Questions />} />
