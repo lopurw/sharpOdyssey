@@ -1,0 +1,70 @@
+.str {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2e334a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.container img {
+  width: 50vw;
+  height: 76vh;
+}
+
+.user {
+  position: absolute;
+  font-size: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+}
+.date {
+  position: absolute;
+  font-size: 30px;
+  top: 86%;
+  left: 22%;
+  transform: translate(-50%, -90%);
+  color: #2e334a;
+  z-index: 8;
+}
+.title {
+  color: aliceblue;
+  font-family: "Forum", serif;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.button {
+  background-color: white;
+  color: #2e334a;
+  border-radius: 89px;
+  padding: 10px;
+  font-family: "Forum", serif;
+  font-size: 20px;
+  margin-top: 20px; /* Добавлено для отступа между кнопкой и изображением */
+}
+
+.button :hover {
+  background-color: rgb(170, 184, 255);
+  color: #2e334a;
+  border-radius: 89px;
+  padding: 10px;
+  font-family: "Forum", serif;
+  font-size: 20px;
+  position: absolute;
+  bottom: 100px;
+  left: 480px;
+  border: 1px solid #2e334a;
+}

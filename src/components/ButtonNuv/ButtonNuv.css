@@ -8,12 +8,13 @@
     background-color: #2E334A;
     color:white;
     height: 40px;
-    width: 170px;
+    width: 180px;
     outline: none;
     border: 1px solid #2E334A;
     font-family: "Rubik Mono One", monospace;
     font-size: 25px;
     text-align: center;
+    margin-right:5px ;
     
     
 }
@@ -21,7 +22,7 @@
     background-color: white;
     color:#2E334A;
     height: 40px;
-    width: 170px;
+    width: 180px;
     border-radius:90px;
     outline: none;
     border: 1px solid white;
@@ -35,7 +36,7 @@
     background-color: white;
     color:#2E334A;
     height: 40px;
-    width: 170px;
+    width: 180px;
     border-radius:90px;
     outline: none;
     border: 1px solid white;

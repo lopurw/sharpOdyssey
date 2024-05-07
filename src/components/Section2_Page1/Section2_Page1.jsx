@@ -1,5 +1,7 @@
 import Card_Section2_Page1 from "../Card_Section2_Page1/Card_Section2_Page1";
 import  './Section2_Page1.css'
+import { Link } from "react-router-dom";
+import footerImage from './image.png'
 export default function Section2_Page1(){
     return(
         <div className="str1_2">
@@ -18,7 +20,7 @@ export default function Section2_Page1(){
                     </div>
                     <div className="item1 second" >
                         <div className="card2">
-                        <Card_Section2_Page1 title={'ЕЖЕДНЕВНЫЕ НАГРАДЫ'} description={'Получайте стимул каждый день с небольшими наградами за вход в игру.'} />
+                        <Card_Section2_Page1 title={'УРОВНИ'} description={'Открывай каждый уровень получая максимальное количество звезд'} />
                         </div>
                         
                     </div>
@@ -28,7 +30,7 @@ export default function Section2_Page1(){
                 <div className="main2">
                     <div className="item2 third"> 
                     <div className="card3">
-                    <Card_Section2_Page1 title={'СТАТИСТИКА'} description={'Просматривайте свой прогресс обучения.'} />
+                    <Card_Section2_Page1 title={'СЕРТИФИКАТ'} description={'Получи в конце прохождения сертификат о обучении'} />
                     </div>
                             
                     </div>
@@ -37,8 +39,23 @@ export default function Section2_Page1(){
                 </div>
             </div>
             
-            
+            <div className="footer">
+                <img src={footerImage}  alt="" />
+                <p>sharpodyssey</p>
+                <div className="footer_nav"><Link className="link" to="/">
+                    <p>Главная</p>
+                </Link>
+                <Link className="link" to="/SignUp">
+                   <p>О нас</p> 
+                </Link>
+                <Link  className="link" to="/Game">
+                <p>Обучение</p>
+                </Link></div>
+            </div>
             
         </div>
+            
+        
+        
     )
 }
