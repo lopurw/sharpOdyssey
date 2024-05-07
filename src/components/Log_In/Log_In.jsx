@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Link } from "react-router-dom";
 
-export default function Log_In() {
+export default function Log_In({setIsAuthenticated}) {
   const [showModal, setShowModal] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
 
@@ -49,6 +49,7 @@ export default function Log_In() {
         setJwtToken(data.token);
         localStorage.setItem("jwtToken", data.token);
         console.log(data.token);
+        setIsAuthenticated(true);
         document.cookie = `cook=${data.token}; path=/`;
         console.log("Registration Success");
         // setRedirectTo("/page1");

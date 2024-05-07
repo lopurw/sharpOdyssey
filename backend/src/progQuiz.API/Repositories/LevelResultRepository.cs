@@ -16,10 +16,15 @@ public class LevelResultRepository : Repository<LevelResult>, ILevelResultReposi
 
     public async Task<List<LevelResult>> GetResultsAsync(int userId)
     {
+        // var results = await _db.LevelResults
+        //     .Where(a => a.UserId == userId)
+        //     .GroupBy(a => a.LevelId)
+        //     .Select(group => group.OrderByDescending(a => a.Result).First())
+        //     .ToListAsync();
         var results = await _db.LevelResults
             .Where(a => a.UserId == userId)
             .GroupBy(a => a.LevelId)
-            .Select(group => group.OrderByDescending(a => a.Result).First())
+            .Select(group => group.OrderByDescending(a => a.PassingDate).First())
             .ToListAsync();
         
         return results;

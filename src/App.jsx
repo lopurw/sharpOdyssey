@@ -13,14 +13,15 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Tooltip from "@mui/material/Tooltip";
 import ProfImg from "./user.jpg";
+import {useNavigate} from "react-router-dom";
 
-const Header = () => {
+const Header = ({isAuthenticated, setIsAuthenticated}) => {
   const [profileImage, setProfileImage] = useState(""); // Сначала устанавливаем пустую строку
   const [isHovering, setIsHovering] = useState(false);
   const location = useLocation();
   const [hideHeader, setHideHeader] = useState(false);
   const [userName, setUserName] = useState("");
-
+  const navigate = useNavigate();
   const handleAboutClick = () => {
     scrollToSection2();
   };
@@ -87,6 +88,13 @@ const Header = () => {
   if (hideHeader) {
     return null;
   }
+  const handleLogout = () => {
+    document.cookie = 'cook=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    setUserName("");
+    setProfileImage(ProfImg)
+    setIsAuthenticated(false)
+    navigate('/SignUp');
+  };
 
   return (
     <header className="header">
@@ -103,6 +111,7 @@ const Header = () => {
           <ButtonNav> Обучение</ButtonNav>
         </Link>
       </nav>
+      {isAuthenticated &&
       <div className="prof">
         <Tooltip title="Изменить фото" placement="top">
           <img
@@ -114,22 +123,24 @@ const Header = () => {
         </Tooltip>
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <p>{userName}</p>
-          {isHovering && <button>Выйти</button>}
+          {isHovering && <button onClick={handleLogout}>Выйти</button>}
         </div>
       </div>
+    }
     </header>
   );
 };
 
 export default function App({ score }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <>
       <Router>
-        <Header />
+        <Header isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <Routes>
           <Route path="/" element={<Page1 />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/Log_In" element={<Log_In />} />
+          <Route path="/Log_In" element={<Log_In setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/Game" element={<Game />} />
 
           <Route path="/questions/:name" element={<Questions />} />

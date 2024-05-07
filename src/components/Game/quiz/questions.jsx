@@ -48,26 +48,48 @@ export default function Questions({ userName }) {
   const [theory, setTheory] = useState("");
 
   // Создаем асинхронную функцию для получения данных с сервера
-  async function fetchLevelTheory(id) {
-    try {
-      // Отправляем GET-запрос к API по адресу http://localhost:5151/api/level/1
-      const response = await axios.get(
-        `http://localhost:5151/api/level/${id}`,
-        {
-          withCredentials: true, // Включаем передачу кук
-        }
-      );
-      // Получаем данные из ответа в формате JSON
-      const data = response.data;
-      setLevelData(data);
-      // Обновляем состояние переменной theory полученными данными
-      setTheory(data.theory);
-      setLevelId(id);
-    } catch (error) {
-      // Обрабатываем возможные ошибки
-      console.error("Ошибка при получении теории уровня:", error);
+  useEffect(() => {
+    // Создаем асинхронную функцию для получения данных с сервера
+    async function fetchLevelTheory(id) {
+      try {
+        const response = await axios.get(
+            `http://localhost:5151/api/level/${id}`,
+            {
+              withCredentials: true, // Включаем передачу кук
+            }
+        );
+        // Получаем данные из ответа в формате JSON
+        const data = response.data;
+        setLevelData(data);
+        // Обновляем состояние переменной theory полученными данными
+        setTheory(data.theory);
+        setLevelId(id);
+      } catch (error) {
+        // Обрабатываем возможные ошибки
+        console.error("Ошибка при получении теории уровня:", error);
+      }
     }
-  }
+
+    // Устанавливаем id в зависимости от значения name
+    let id;
+    if (name === "level1") {
+      id = 1;
+    } else if (name === "level2") {
+      id = 2;
+    } else if (name === "level3") {
+      id = 3;
+    } else if (name === "level4") {
+      id = 4;
+    } else if (name === "level5") {
+      id = 5;
+    } else if (name === "level6") {
+      id = 6;
+    }
+
+    // Вызываем функцию fetchLevelTheory, передавая в неё значение id
+    fetchLevelTheory(id);
+  }, [name]); // Добавляем name в список зависимостей useEffect
+
   async function fetchResult(resultData) {
     try {
       // Отправляем GET-запрос к API по адресу http://localhost:5151/api/level/1
@@ -94,32 +116,26 @@ export default function Questions({ userName }) {
 
   // Присваиваем значения в зависимости от значения name
   if (name === "level1") {
-    fetchLevelTheory(1);
     title = `Уровень ` + levelData.levelId;
     name_inf = levelData.name;
     lenght = levelData.length;
   } else if (name === "level2") {
-    fetchLevelTheory(2);
     title = `Уровень ` + levelData.levelId;
     name_inf = levelData.name;
     lenght = levelData.length;
   } else if (name === "level3") {
-    fetchLevelTheory(3);
     title = `Уровень ` + levelData.levelId;
     name_inf = levelData.name;
     lenght = levelData.length;
   } else if (name === "level4") {
-    fetchLevelTheory(4);
     title = `Уровень ` + levelData.levelId;
     name_inf = levelData.name;
     lenght = levelData.length;
   } else if (name === "level5") {
-    fetchLevelTheory(5);
     title = `Уровень ` + levelData.levelId;
     name_inf = levelData.name;
     lenght = levelData.length;
   } else if (name === "level6") {
-    fetchLevelTheory(6);
     title = `Уровень ` + levelData.levelId;
     name_inf = levelData.name;
     lenght = levelData.length;
@@ -199,6 +215,9 @@ export default function Questions({ userName }) {
   const progressWidth =
     Math.round((currentQuestionIndex / questions.length) * 100) + "%";
 
+  const handleRetryClick = () => {
+    window.location.reload(); // Перезагружаем текущую страницу
+  };
     if (quizCompleted) {
       if (certificateReceived) {
         return <Sertificate userName={userName} />;
@@ -220,7 +239,7 @@ export default function Questions({ userName }) {
                 <img src={Home} alt="" className={classes.home}/>
               </Link>
               <Link to={`/questions/${name}`}>
-                <img src={Retry} alt="" className={classes.retry}/>
+                <img src={Retry} alt="" className={classes.retry} onClick={handleRetryClick}/>
               </Link>
             </div>
           </div>
