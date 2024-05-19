@@ -91,6 +91,7 @@ export default function SignUp() {
               <Link to="/Log_In" className={classes.link}>
                 Войти
               </Link>
+              
             </div>
           </form>
         </div>

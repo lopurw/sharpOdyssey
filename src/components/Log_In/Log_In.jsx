@@ -92,6 +92,13 @@ export default function Log_In({setIsAuthenticated}) {
             <button className={classes.but} type="submit">
               ВОЙТИ
             </button>
+            <div className={classes.text}>
+              
+              <Link to="/ForgotPasword" className={classes.link}>
+              <p>Забыли пароль? </p>
+              </Link>
+            
+            </div>
           </form>
         </div>
         {showModal && (

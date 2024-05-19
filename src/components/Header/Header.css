@@ -11,9 +11,10 @@
   height: 70px;
   background-color: #2e334a;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   text-align: center;
   align-items: center;
+  
 }
 
 .logo {
@@ -23,9 +24,15 @@
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+ justify-content: center;
+ align-items:center;
   align-items: center;
-  margin-left: 150px;
+  margin-left: 400px;
+
+  width: 556px;
+ 
+  margin-right: 240px;
+  
 }
 
 .prof {
@@ -33,11 +40,13 @@
   position: relative;
   display: flex;
   align-items: center;
+  
+
 }
 .prof img {
   height: 50px;
   width: 50px;
-  margin-right: 20px;
+ 
 }
 .prof p {
   margin-right: 40px;

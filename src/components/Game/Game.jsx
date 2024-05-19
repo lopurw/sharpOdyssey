@@ -63,7 +63,7 @@ export default function Game() {
           if (parseInt(response.data.totalSum) >= 6) setIsLevel3Open(true);
           if (parseInt(response.data.totalSum) >= 9) setIsLevel4Open(true);
           if (parseInt(response.data.totalSum) >= 11) setIsLevel5Open(true);
-          if (parseInt(response.data.totalSum) >= 1) setIsLevel6Open(true);
+          if (parseInt(response.data.totalSum) >= 15) setIsLevel6Open(true);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -113,7 +113,7 @@ export default function Game() {
                 <img src="src\home2.png" className={classes.home2} />
               </Link>
             ) : (
-              <div onClick={() => alert(`Уровень закрыт. ${allStars}/${3}`)}>
+              <div onClick={() => alert(`Уровень закрыт. Для открытия уровня:${allStars}/${3}`)}>
                 <img src="src\lock.png" alt="" className={classes.lock2} />
                 <img src="src\home2.png" className={classes.home2} />
               </div>
@@ -126,7 +126,7 @@ export default function Game() {
                 <img src="src\home3.png" className={classes.home3} />
               </Link>
             ) : (
-              <div onClick={() => alert(`Уровень закрыт. ${allStars}/${6}`)}>
+              <div onClick={() => alert(`Уровень закрыт.Для открытия уровня: ${allStars}/${6}`)}>
                 <img src="src\lock.png" alt="" className={classes.lock3} />
                 <img src="src\home3.png" className={classes.home3} />
               </div>
@@ -139,7 +139,7 @@ export default function Game() {
                 <img src="src\home4.png" className={classes.home4} />
               </Link>
             ) : (
-              <div onClick={() => alert(`Уровень закрыт. ${allStars}/${9}`)}>
+              <div onClick={() => alert(`Уровень закрыт. Для открытия уровня:${allStars}/${9}`)}>
                 <img src="src\lock.png" alt="" className={classes.lock4} />
                 <img src="src\home4.png" className={classes.home4} />
               </div>
@@ -152,7 +152,7 @@ export default function Game() {
                 <img src="src\home5.png" className={classes.home5} />
               </Link>
             ) : (
-              <div onClick={() => alert(`Уровень закрыт. ${allStars}/${11}`)}>
+              <div onClick={() => alert(`Уровень закрыт. Для открытия уровня:${allStars}/${11}`)}>
                 <img src="src\lock.png" alt="" className={classes.lock5} />
                 <img src="src\home5.png" className={classes.home5} />
               </div>
@@ -165,7 +165,7 @@ export default function Game() {
                 <img src="src\home6.png" className={classes.home6} />
               </Link>
             ) : (
-              <div onClick={() => alert(`Уровень закрыт. ${allStars}/${15}`)}>
+              <div onClick={() => alert(`Уровень закрыт. Для открытия уровня:${allStars}/${15}`)}>
                 <img src="src\lock.png" alt="" className={classes.lock6} />
                 <img src="src\home6.png" className={classes.home6} />
               </div>

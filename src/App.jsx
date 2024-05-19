@@ -14,6 +14,10 @@ import axios from "axios";
 import Tooltip from "@mui/material/Tooltip";
 import ProfImg from "./user.jpg";
 import {useNavigate} from "react-router-dom";
+import ForgotPaddword from "./components/Log_In/ForgotPaddword";
+import ResetPassword from "./components/Log_In/ResetPassword";
+import Daily_Reward from "./components/Game/Daily_Reward";
+
 
 const Header = ({isAuthenticated, setIsAuthenticated}) => {
   const [profileImage, setProfileImage] = useState(""); // Сначала устанавливаем пустую строку
@@ -142,9 +146,12 @@ export default function App({ score }) {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Log_In" element={<Log_In setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/Game" element={<Game />} />
-
+          <Route path="/ForgotPasword" element= {<ForgotPaddword/>}/>
           <Route path="/questions/:name" element={<Questions />} />
+          <Route path="/ResetPassword" element={<ResetPassword />} />
+          <Route path="/Daily_Reward" element={<Daily_Reward />} />
         </Routes>
+        
       </Router>
     </>
   );

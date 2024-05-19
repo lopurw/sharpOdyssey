@@ -62,6 +62,11 @@
     left: 620px;
     border: 1px solid #2E334A;
 }
+.but_start:hover{
+    background-color:#191c29;
+    
+    border: 1px solid #2E334A;
+}
 .but_dop{
     background-color:rgba(245, 222, 179, 0);
     border: #2e334a00;

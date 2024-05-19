@@ -9,6 +9,7 @@ export default function Section1_Page1() {
           <h1>SHARPODUSSEY</h1>
           <p>Погрузись в мир программирования с нашей игрой.</p>
           <Link to="/SignUp">
+             
             <button className={classes.but_start}>Начать</button>
           </Link>
         </div>

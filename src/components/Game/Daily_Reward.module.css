@@ -1,0 +1,38 @@
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    /* border: 2px solid #000; */
+    box-shadow: 24px;
+    padding: 50px  40px;
+    text-align: center;
+    border-radius:20px;
+  }
+  
+  .title {
+    
+  color: #2e334a;
+    margin-bottom: 16px;
+  }
+  
+  .description {
+    margin-bottom: 8px;
+  }
+  
+  .reward {
+    color: gold;
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+  
+  .closeButton {
+    background-color: #1976d2;
+    color: white;
+    &:hover {
+      background-color: #115293;
+    }
+  }
+  
