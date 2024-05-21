@@ -2,7 +2,7 @@ import classes from './Daily_Reward.module.css';
 import React, { useState, useEffect } from 'react';
 import { Modal, Box, Typography } from '@mui/material';
 
-export default function Daily_Reward() {
+export default function Daily_Reward({setRewardModal}) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -10,7 +10,10 @@ export default function Daily_Reward() {
     setOpen(true);
   }, []);
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setRewardModal(false);
+    setOpen(false);
+  }
 
   return (
     <div>

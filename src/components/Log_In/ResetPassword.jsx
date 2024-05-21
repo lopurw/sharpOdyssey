@@ -17,7 +17,7 @@ const ResetPassword = () => {
     console.log(token, password, confirmPassword);
     try {
       const response = await axios.post(
-        "http://localhost:5177/api/auth/reset-password",
+        "http://localhost:5151/auth/reset-password",
         {
           token,
           password,
@@ -33,14 +33,7 @@ const ResetPassword = () => {
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        const errors = error.response.data;
-        if (errors.Password != null) {
-          setErrorMessage(errors.Password);
-        } else if (errors.Token != null) {
-          setErrorMessage(errors.Token);
-        } else {
           setErrorMessage("Ошибка при смене пароля");
-        }
       }
       if (error.response && error.response.status === 404) {
         setErrorMessage(
