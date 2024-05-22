@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CircularProgress from "@mui/material/CircularProgress";
+import Daily_Reward from "./Daily_Reward.jsx";
 
 export default function Game() {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Game() {
   const [isLevel4Open, setIsLevel4Open] = useState(false);
   const [isLevel5Open, setIsLevel5Open] = useState(false);
   const [isLevel6Open, setIsLevel6Open] = useState(false);
-
+  const [rewardModal, setRewardModal] = useState(false);
   const [filledStars, setFilledStars] = useState({}); // Объект для хранения количества звезд по id уровня
   const location = useLocation();
   const [allStars, setAllStars] = useState(0);
@@ -69,7 +70,32 @@ export default function Game() {
           console.error("Error fetching data:", error);
         });
     }, 500); // Ожидание 5 секунд
+  }, [rewardModal]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      checkDailyReward();
+    }, 60000); // 60000 milliseconds = 1 minute
+
+    // Initial check when component mounts
+    checkDailyReward();
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
+  const checkDailyReward = async () => {
+    console.log("check")
+    try {
+      const response = await axios.get('http://localhost:5151/api/level/daily', {
+        withCredentials: true
+      });
+      if (response.data.canClaim) {
+        setRewardModal(true);
+      }
+    } catch (error) {
+      console.error('Error checking daily reward', error);
+    }
+  };
 
   const params = new URLSearchParams(location.search);
   const passingPercentage = params.get("percentage") || 0;
@@ -77,6 +103,9 @@ export default function Game() {
 
   return (
     <>
+      {rewardModal &&
+        <Daily_Reward setRewardModal={setRewardModal} />
+    }
       {/* Отобразить CircularProgress, пока данные загружаются */}
       {!isLoaded && (
         <div className={classes.loading}>

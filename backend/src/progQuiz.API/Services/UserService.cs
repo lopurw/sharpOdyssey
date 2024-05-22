@@ -1,4 +1,5 @@
-﻿using progQuiz.API.Auth;
+﻿using System.Security.Cryptography;
+using progQuiz.API.Auth;
 using progQuiz.API.Interfaces.Auth;
 using progQuiz.API.Interfaces.Repository;
 using progQuiz.API.Models;
@@ -39,5 +40,25 @@ public class UserService
         }
         var token = _jwtProvider.GenerateToken(user);
         return token;
+    }
+    public async Task<bool> ResetPassword(User user, string? requestPassword)
+    {
+        var hashedPassword = _passwordHasher.Generate(requestPassword);
+        user.PasswordHash = hashedPassword;
+        user.PasswordResetToken = null;
+        user.PasswordResetTokenExpires = null;
+        await _userRepository.UpdateAsync(user);
+        return true;
+    }
+    private string GenerateToken()
+    {
+        return Convert.ToHexString(RandomNumberGenerator.GetBytes(64)); 
+    }
+    public async Task<string> ForgotPassword(User user)
+    {
+        user.PasswordResetToken = GenerateToken();
+        user.PasswordResetTokenExpires = DateTime.UtcNow.AddDays(1);
+        await _userRepository.UpdateAsync(user);
+        return user.PasswordResetToken;
     }
 }

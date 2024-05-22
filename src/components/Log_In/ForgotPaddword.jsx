@@ -9,10 +9,11 @@ const ForgotPaddword = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [message, setMessage] = useState(""); // Устанавливаем значение true, чтобы отобразить форму
 
-  const sendLetter = async () => {
+  const sendLetter = async (e) => {
+    e.preventDefault()
     try {
       const response = await axios.post(
-        `http://localhost:5177/api/auth/forgot-password?email=${email}`
+        `http://localhost:5151/auth/forgot-password?email=${email}`
       );
       const data = response.data;
       const status = response.status;

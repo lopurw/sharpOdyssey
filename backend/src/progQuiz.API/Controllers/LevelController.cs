@@ -12,13 +12,15 @@ public class LevelController : ControllerBase
 {
     private readonly IRepository<Level> _levelRepository;
     private readonly ILevelResultRepository _resultRepository;
+    private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper;
 
-    public LevelController(IRepository<Level> levelRepository, IMapper mapper, ILevelResultRepository resultRepository)
+    public LevelController(IRepository<Level> levelRepository, IMapper mapper, ILevelResultRepository resultRepository, IUserRepository userRepository)
     {
         _levelRepository = levelRepository;
         _mapper = mapper;
         _resultRepository = resultRepository;
+        _userRepository = userRepository;
     }
     [Authorize]
     [HttpGet("{id}")]
@@ -36,14 +38,34 @@ public class LevelController : ControllerBase
         return Ok(level);
     }
     [Authorize]
+    [HttpGet("daily")]
+    public async Task<IActionResult> DailyReward()
+    {
+        var userId = int.Parse(User.FindFirst("userId").Value);
+        var user = await _userRepository.GetAsync(u => u.UserId == userId);
+
+        var lastRewardTime = user.LastRewardTime;
+        if (lastRewardTime == null || (DateTime.UtcNow - lastRewardTime.Value).TotalHours >= 24)
+        {
+            user.Stars += 1;
+            user.LastRewardTime = DateTime.UtcNow;
+            await _userRepository.UpdateAsync(user);
+            return Ok(new { Message = "Вы получили 1 звездочку", canClaim = true });
+        }
+
+        return Ok(new { Message = "Ежедневная награда уже получена", canClaim = false });
+    }
+
+    [Authorize]
     [HttpGet]
     [Route( "results")]
     
     public async Task<IActionResult> GetResults()
     {
         var userId = int.Parse(User.FindFirst("userId").Value);
+        var user = await _userRepository.GetAsync(u => u.UserId == userId);
         var results =  _mapper.Map<List<LevelResultDto>>(await _resultRepository.GetResultsAsync(userId));
-        int totalSum = results.Sum(r => int.Parse(r.levelResult));
+        int totalSum = results.Sum(r => int.Parse(r.levelResult)) + user.Stars;
         return Ok(new {totalSum, results});
     }
 
