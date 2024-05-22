@@ -80,6 +80,7 @@ const Header = ({isAuthenticated, setIsAuthenticated}) => {
       .then((response) => {
         setUserName(response.data.userName);
         if (!response.data.profileImage) {
+          setIsAuthenticated(true);
           // Если у пользователя нет фото профиля
           setProfileImage(ProfImg); // Устанавливаем фото по умолчанию
         }
