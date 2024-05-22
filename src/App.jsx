@@ -79,6 +79,7 @@ const Header = ({isAuthenticated, setIsAuthenticated}) => {
       })
       .then((response) => {
         setUserName(response.data.userName);
+        setIsAuthenticated(true);
         if (!response.data.profileImage) {
           setIsAuthenticated(true);
           // Если у пользователя нет фото профиля
@@ -149,7 +150,7 @@ export default function App({ score }) {
           <Route path="/Game" element={<Game />} />
           <Route path="/ForgotPasword" element= {<ForgotPaddword/>}/>
           <Route path="/questions/:name" element={<Questions />} />
-          <Route path="/ResetPassword" element={<ResetPassword />} />
+          <Route path="/ResetPassword/:token" element={<ResetPassword />} />
           <Route path="/Daily_Reward" element={<Daily_Reward />} />
         </Routes>
         

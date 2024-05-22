@@ -24,6 +24,7 @@ builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<PasswordHasher>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddScoped<ILevelResultRepository, LevelResultRepository>();
 builder.Services.AddCors(options =>
 {
